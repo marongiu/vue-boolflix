@@ -15,6 +15,23 @@ body {
   align-items: center;
 }
 
+.control input {
+  outline: none;
+  padding: 5px 15px;
+}
+
+.control button {
+  outline: none;
+  padding: 5px 15px;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.control button:hover {
+  transform: scale(1.02)
+}
+
 .control > * {
   margin: 0 10px;
 }
@@ -33,4 +50,9 @@ body {
   height: 300px;
   margin: 10px 10px;
   background: white;
+  text-align: center;
+}
+
+.card > * {
+  padding: 10px 10px;
 }

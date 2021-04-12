@@ -15,6 +15,8 @@ var app = new Vue({
           this.filmSearched = response.data.results;
           console.log(this.filmSearched);
         })
+        // Svuoto input
+        this.search = ''
     }
   }
 })
