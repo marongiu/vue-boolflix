@@ -11,7 +11,6 @@ var app = new Vue({
   },
   methods: {
     ricerca: function () {
-      if (this.search != '') {
         axios.get('https://api.themoviedb.org/3/search/movie?api_key=a921d6aadd798d788a4bb0455b772f57&query=' + this.search + '&language=IT')
         .then((response) => {
           this.filmSearched = response.data.results;
@@ -22,11 +21,11 @@ var app = new Vue({
               item.original_language = 'gb';
             }
           });
+        }) // fine chiamata axio
 
-        })
+
         // Svuoto input
         this.search = ''
-      }
     },
   }
 })
