@@ -10,12 +10,18 @@
 <body>
 
   <div id="root">
-    <input type="text" name="" value="" v-model="search">
-    <button type="button" name="button" @click="ricerca">Cerca</button>
+
+    <div class="control">
+      <input type="text" name="" value="" v-model="search">
+      <button type="button" name="button" @click="ricerca">Cerca</button>
+    </div>
 
     <div class="container">
-      <div class="title" v-for="film in filmSearched">
-        <p>{{film.title}}</p>
+      <div class="card" v-for="film in filmSearched">
+        <p>Titolo: <br>{{film.title}}</p>
+        <p>Titolo Originale: <br> {{film.original_title}}</p>
+        <p>Lingua: <br> {{film.original_language}}</p>
+        <p>Voto: <br> {{film.vote_average}}</p>
       </div>
     </div>
   </div>
