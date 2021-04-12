@@ -9,7 +9,12 @@
 <body>
 
   <div id="root">
-    
+    <input type="text" name="" value="" v-model="search">
+    <button type="button" name="button" @click="ricerca">Cerca</button>
+
+    <div class="title" v-for="film in filmSearched">
+      <p>{{film.title}}</p>
+    </div>
   </div>
 
 
