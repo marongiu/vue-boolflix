@@ -4,6 +4,15 @@ body {
   color: #ffff;
 }
 
+ul li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 /* Navbar */
 nav.bg-light {
   background: black!important;
@@ -69,7 +78,22 @@ a.active {
 }
 
 .card-back {
+  text-align: left;
   background-color: #ffff;
   color: black;
   transform: rotateY(180deg);
+}
+
+.card-back h4 {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.card-back ul li {
+  display: inline;
+}
+
+.card-back ul li i {
+  margin: 0 5px;
+  color: black;
 }

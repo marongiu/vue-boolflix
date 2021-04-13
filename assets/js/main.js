@@ -24,7 +24,6 @@ var app = new Vue({
 
         this.filmSearched =  film.data.results;
         this.serieSearched = serie.data.results;
-        console.log(this.filmSearched);
         // Cambio per adattare la bandiera al sito per film
         this.filmSearched.forEach((item, i) => {
           if (item.original_language == 'en') {
@@ -38,11 +37,24 @@ var app = new Vue({
           }
         });
 
+        // Richiamo la funzione per modificare la valutazione
+        this.vote()
 
       }))
       // Svuoto input
       this.search = ''
     },
+
+    vote: function () {
+      this.filmSearched.forEach((item, i) => {
+        item.vote_average = Math.floor(item.vote_average * 5 / 10);
+      });
+
+      this.serieSearched.forEach((item, i) => {
+        item.vote_average = Math.floor(item.vote_average * 5 / 10);
+      });
+
+    }
 
   }
 })
