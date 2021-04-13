@@ -36,8 +36,6 @@ var app = new Vue({
             item.original_language = 'gb';
           }
         });
-
-          console.log(this.filmSearched);
         // Richiamo la funzione per modificare la valutazione
         this.vote()
 
