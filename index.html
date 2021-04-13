@@ -37,6 +37,7 @@
       <!-- SearchBar -->
       <form class="form-inline">
         <input class="form-control mr-sm-2"  placeholder="Search"  @keyup.enter="ricerca" v-model="search">
+        <button type="button" name="button" @click="ricerca">Ricerca</button>
       </form>
     </nav>
 
@@ -46,12 +47,13 @@
         <!-- Film -->
         <div class="card" v-for="(film,i) in filmSearched">
           <div class="card-content">
-            <div class="card-front" :style="`background: url(http://image.tmdb.org/t/p/w200/${film.poster_path}) 100% no-repeat;`">
+            <div class="card-front">
+              <img :src="`http://image.tmdb.org/t/p/w200/${film.poster_path}`" alt="">
             </div>
             <div class="card-back">
               <h4>{{film.title}}</h4>
               <div class="vote">
-                <p>{{film.vote_average}}</p>
+                <!-- Voto -->
                 <ul>
                   <li v-for="voto in film.vote_average"><i class="fas fa-star"></i></li>
                 </ul>
@@ -63,13 +65,13 @@
         <!-- Serie -->
         <div class="card" v-for="(serie,i) in serieSearched">
           <div class="card-content">
-            <div class="card-front" :style="`background: url(http://image.tmdb.org/t/p/w200/${serie.poster_path}) 100% no-repeat;`">
-
+            <div class="card-front">
+              <img :src="`http://image.tmdb.org/t/p/w200/${serie.poster_path}`" alt="">
             </div>
             <div class="card-back">
               <h4>{{serie.name}}</h4>
               <div class="vote">
-                <p>{{serie.vote_average}}</p>
+                <!-- Voto -->
                 <ul>
                   <li v-for="voto in serie.vote_average"><i class="fas fa-star"></i></li>
                 </ul>

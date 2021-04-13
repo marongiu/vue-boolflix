@@ -98,6 +98,12 @@ a.active {
   color: black;
 }
 
+form.form-inline button {
+  display: none;
+}
+
+/* Media queries */
+
 @media all and (max-width: 992px) {
   .navbar-brand  {
     margin: 0 auto;
@@ -105,5 +111,9 @@ a.active {
 
   form.form-inline {
     margin: 0 auto;
+  }
+
+  form.form-inline button {
+    display: block;
   }
 }
