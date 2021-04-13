@@ -5,6 +5,7 @@ var app = new Vue({
     filmSearched: [],
     serieSearched: [],
     flag: 'https://www.countryflags.io/',
+    background: 'http://image.tmdb.org/t/p/w200/',
   },
 
   mounted() {
@@ -42,5 +43,6 @@ var app = new Vue({
       // Svuoto input
       this.search = ''
     },
+
   }
 })
