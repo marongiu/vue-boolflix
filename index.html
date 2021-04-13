@@ -42,15 +42,28 @@
 <!-- Inizio posizionamento card -->
     <div class="container-fluid1">
       <div class="cards-container d-flex flex-wrap justify-content-center">
+        <!-- Film -->
         <div class="card" v-for="(film,i) in filmSearched">
           <div class="card-content">
             <div class="card-front" :style="`background: url(http://image.tmdb.org/t/p/w200/${film.poster_path}) 100% no-repeat;`">
-
             </div>
             <div class="card-back">
               <h3>{{film.title}}</h3>
               <p>{{film.vote_average}}</p>
-              <span></span>
+              <p>{{film.overview}}</p>
+            </div>
+          </div>
+        </div>
+<!-- Serie -->
+        <div class="card" v-for="(serie,i) in serieSearched">
+          <div class="card-content">
+            <div class="card-front" :style="`background: url(http://image.tmdb.org/t/p/w200/${serie.poster_path}) 100% no-repeat;`">
+
+            </div>
+            <div class="card-back">
+              <h3>{{serie.name}}</h3>
+              <p>{{serie.vote_average}}</p>
+              <p>{{serie.overview}}</p>
             </div>
           </div>
         </div>

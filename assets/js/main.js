@@ -24,7 +24,7 @@ var app = new Vue({
 
         this.filmSearched =  film.data.results;
         this.serieSearched = serie.data.results;
-
+        console.log(this.filmSearched);
         // Cambio per adattare la bandiera al sito per film
         this.filmSearched.forEach((item, i) => {
           if (item.original_language == 'en') {
