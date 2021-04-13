@@ -13,7 +13,7 @@ var app = new Vue({
   },
   methods: {
     ricerca: function () {
-      const movieReq = axios.get('https://api.themoviedb.org/3/search/movie?api_key=a921d6aadd798d788a4bb0455b772f57&query=' + this.search + '&language=IT');
+      const movieReq = axios.get('https://api.themoviedb.org/3/search/movie?api_key=a921d6aadd798d788a4bb0455b772f57&query=' + this.search);
       const serieReq = axios.get('https://api.themoviedb.org/3/search/tv?api_key=a921d6aadd798d788a4bb0455b772f57&language=it_IT&query=' + this.search);
       axios.all([
         movieReq,
@@ -37,6 +37,7 @@ var app = new Vue({
           }
         });
 
+          console.log(this.filmSearched);
         // Richiamo la funzione per modificare la valutazione
         this.vote()
 
