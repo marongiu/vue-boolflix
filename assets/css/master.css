@@ -97,3 +97,13 @@ a.active {
   margin: 0 5px;
   color: black;
 }
+
+@media all and (max-width: 992px) {
+  .navbar-brand  {
+    margin: 0 auto;
+  }
+
+  form.form-inline {
+    margin: 0 auto;
+  }
+}
