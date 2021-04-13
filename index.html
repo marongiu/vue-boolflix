@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Boolfix</title>
   <link rel="stylesheet" href="./assets/css/master.css">
 </head>
 <body>
@@ -12,11 +12,12 @@
   <div id="root">
 
     <div class="control">
-      <input type="text" name="" value="" v-model="search" placeholder=" Cerca un film">
+      <input type="text" name="" value="" v-model="search" placeholder=" Cerca un film" @keyup.enter="ricerca">
       <button type="button" name="button" @click="ricerca">Cerca</button>
     </div>
 
     <div class="container">
+      <!-- film -->
       <div class="card" v-for="film in filmSearched">
         <p>Titolo: <br>{{film.title}}</p>
         <p>Titolo Originale: <br> {{film.original_title}}</p>
@@ -26,6 +27,20 @@
 
         </p>
         <p>Voto: <br> {{film.vote_average}}</p>
+      </div>
+
+      <!-- serie -->
+
+      <div class="card" v-for="serie in serieSearched">
+        <h5>Serie</h5>
+        <p>Titolo: <br>{{serie.name}}</p>
+        <p>Titolo Originale: <br> {{serie.original_name}}</p>
+        <p>Lingua: <br>
+
+          <img :src="flag + serie.original_language + '/shiny/64.png'" alt="">
+
+        </p>
+        <p>Voto: <br> {{serie.vote_average}}</p>
       </div>
     </div>
   </div>
