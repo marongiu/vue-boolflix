@@ -59,7 +59,8 @@
                 <!-- Voto -->
                 <ul>
                   <span>Voto:</span>
-                  <li v-for="voto in 5"><i class="fas fa-star"></i></li>
+                  <li ><i v-for="voto in film.vote_average" class="fas fa-star" style="color: orange"></i></li>
+                  <li><i v-for="vuota in 5 - (film.vote_average)" class="far fa-star"></i></li>
                 </ul>
               </div>
               <div class="overview">
@@ -83,7 +84,8 @@
                 <!-- Voto -->
                 <ul>
                   <span>Voto:</span>
-                  <li v-for="voto in 5"><i class="fas fa-star"></i></li>
+                  <li ><i v-for="voto in serie.vote_average" class="fas fa-star" style="color: orange"></i></li>
+                  <li><i v-for="vuota in 5 - (serie.vote_average)" class="far fa-star"></i></li>
                 </ul>
               </div>
                 <div class="overview">
