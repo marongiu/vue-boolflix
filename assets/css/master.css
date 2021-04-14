@@ -152,7 +152,9 @@ span.card-title {
   font-size: 18px;
 }
 
-
+.form-inline button {
+  display: none;
+}
 
 
 /* Media queries */
@@ -162,11 +164,11 @@ span.card-title {
     margin: 0 auto;
   }
 
-  form.form-inline {
+  .form-inline {
     margin: 0 auto;
   }
 
-  form.form-inline button {
+  .form-inline button {
     display: block;
     margin: 20px auto;
     border-radius: 5px;
