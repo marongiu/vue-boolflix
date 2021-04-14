@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
   background: black;
   color: #ffff;
+  font-family: 'Montserrat', sans-serif;
 }
 
+h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
 ul li {
   list-style: none;
 }
@@ -11,6 +17,10 @@ ul li {
 ul {
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-size: 10px;
 }
 
 /* Navbar */

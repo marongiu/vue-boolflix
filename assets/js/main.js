@@ -60,7 +60,11 @@ var app = new Vue({
           item.original_language = 'gb';
         }
       });
-    }
-
+    },
+// Svuoto campo al click su Netflix
+    home: function () {
+      this.serieSearched = ''
+      this.filmSearched = ''
+    },
   }
 })
