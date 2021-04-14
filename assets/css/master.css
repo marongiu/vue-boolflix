@@ -114,9 +114,6 @@ a.active {
   color: black;
 }
 
-form.form-inline button {
-  display: none;
-}
 
 .card-back .vote {
   display: flex;
