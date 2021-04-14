@@ -48,7 +48,7 @@
         <div class="card" v-for="(film,i) in filmSearched">
           <div class="card-content">
             <div class="card-front">
-              <img :src="`http://image.tmdb.org/t/p/w200/${film.poster_path}`" alt="">
+              <img  :src="(film.poster_path == null) ? errore : `http://image.tmdb.org/t/p/w200/${film.poster_path}`" alt="">
             </div>
             <div class="card-back">
               <div class="card-info">
@@ -73,7 +73,7 @@
         <div class="card" v-for="(serie,i) in serieSearched">
           <div class="card-content">
             <div class="card-front">
-              <img :src="`http://image.tmdb.org/t/p/w200/${serie.poster_path}`" alt="">
+              <img :src="(serie.poster_path == null) ? errore : `http://image.tmdb.org/t/p/w200/${serie.poster_path}`" alt="">
             </div>
             <div class="card-back">
               <div class="card-info">

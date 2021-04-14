@@ -7,6 +7,7 @@ var app = new Vue({
     inizio: '',
     flag: 'https://www.countryflags.io/',
     background: 'http://image.tmdb.org/t/p/w200/',
+    errore: './assets/img/errore.png'
   },
 
   mounted() {
