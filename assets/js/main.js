@@ -4,12 +4,12 @@ var app = new Vue({
     search: '',
     filmSearched: [],
     serieSearched: [],
+    inizio: '',
     flag: 'https://www.countryflags.io/',
     background: 'http://image.tmdb.org/t/p/w200/',
   },
 
   mounted() {
-
   },
   methods: {
     ricerca: function () {
@@ -22,7 +22,7 @@ var app = new Vue({
       .then(axios.spread((film, serie) => {
 
 
-        this.filmSearched =  film.data.results;
+        this.filmSearched = film.data.results;
         this.serieSearched = serie.data.results;
         // Cambio per adattare la bandiera al sito per film
         this.filmSearched.forEach((item, i) => {
@@ -46,11 +46,13 @@ var app = new Vue({
 
     vote: function () {
       this.filmSearched.forEach((item, i) => {
-        item.vote_average = Math.floor(item.vote_average * 5 / 10);
+        item.vote_average = Math.ceil(item.vote_average * 5 / 10);
+            console.log(item.vote_average);
+          return item.vote_average;
       });
 
       this.serieSearched.forEach((item, i) => {
-        item.vote_average = Math.floor(item.vote_average * 5 / 10);
+        item.vote_average = Math.ceil(item.vote_average * 5 / 10);
       });
 
     }

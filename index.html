@@ -51,11 +51,15 @@
               <img :src="`http://image.tmdb.org/t/p/w200/${film.poster_path}`" alt="">
             </div>
             <div class="card-back">
-              <h4>{{film.title}}</h4>
+              <div class="card-info">
+                <h4>{{film.title}}</h4>
+                <img :src="flag + film.original_language + '/shiny/64.png'" alt="">
+              </div>
               <div class="vote">
                 <!-- Voto -->
                 <ul>
-                  <li v-for="voto in film.vote_average"><i class="fas fa-star"></i></li>
+                  <span>Voto:</span>
+                  <li v-for="voto in 5"><i class="fas fa-star"></i></li>
                 </ul>
               </div>
               <div class="overview">
@@ -71,11 +75,15 @@
               <img :src="`http://image.tmdb.org/t/p/w200/${serie.poster_path}`" alt="">
             </div>
             <div class="card-back">
-              <h4>{{serie.name}}</h4>
+              <div class="card-info">
+                <h4>{{serie.name}}</h4>
+                <img :src="flag + serie.original_language + '/shiny/64.png'" alt="">
+              </div>
               <div class="vote">
                 <!-- Voto -->
                 <ul>
-                  <li v-for="voto in serie.vote_average"><i class="fas fa-star"></i></li>
+                  <span>Voto:</span>
+                  <li v-for="voto in 5"><i class="fas fa-star"></i></li>
                 </ul>
               </div>
                 <div class="overview">
@@ -97,38 +105,3 @@
   <script src="./assets/js/main.js" charset="utf-8"></script>
 </body>
 </html>
-
-
-<!-- <div class="control">
-<input type="text" name="" value="" v-model="search" placeholder=" Cerca un film" @keyup.enter="ricerca">
-<button type="button" name="button" @click="ricerca">Cerca</button>
-</div>
-
-<div class="container">
-<!- film -->
-<!-- <div class="card" v-for="film in filmSearched">
-<p>Titolo: <br>{{film.title}}</p>
-<p>Titolo Originale: <br> {{film.original_title}}</p>
-<p>Lingua: <br>
-
-<img :src="flag + film.original_language + '/shiny/64.png'" alt="">
-<img :src="background + film.poster_path" alt="">
-
-</p>
-<p>Voto: <br> {{film.vote_average}}</p>
-</div> -->
-
-<!-- serie -->
-
-<!-- <div class="card" v-for="serie in serieSearched">
-<h5>Serie</h5>
-<p>Titolo: <br>{{serie.name}}</p>
-<p>Titolo Originale: <br> {{serie.original_name}}</p>
-<p>Lingua: <br>
-
-<img :src="flag + serie.original_language + '/shiny/64.png'" alt="">
-
-</p>
-<p>Voto: <br> {{serie.vote_average}}</p>
-</div>
-</div>  -->
