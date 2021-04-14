@@ -4,15 +4,26 @@ var app = new Vue({
     search: '',
     filmSearched: [],
     serieSearched: [],
+    popolari: [],
     inizio: '',
     flag: 'https://www.countryflags.io/',
     background: 'http://image.tmdb.org/t/p/w342/',
     errore: './assets/img/errore.png'
   },
 
-  mounted() {
-  },
+  mounted: function () {
+    // Benvenuto con i film piu popolari
+    axios.get('https://api.themoviedb.org/3/movie/popular?api_key=a921d6aadd798d788a4bb0455b772f57&language=it-IT')
+      .then((response) => {
+        this.popolari = response.data.results;
 
+        this.popolari.forEach((item, i) => {
+          if (item.original_language == 'en') {
+            item.original_language = 'gb';
+          }
+        });
+      })
+  },
   methods: {
     ricerca: function () {
       if (this.search.length >= 1) {

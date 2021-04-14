@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#" @click="home">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Serie Tv</a>
@@ -44,6 +44,27 @@
     <!-- Inizio posizionamento card -->
     <div class="container-fluid1">
       <div class="cards-container d-flex flex-wrap justify-content-center">
+        <!-- Benvenuto con piu popolari-->
+        <h2 v-if="(!filmSearched.length)" >I più popolari</h2>
+        <div class="cards-container d-flex flex-wrap justify-content-center flex-wrap" v-if="(!filmSearched.length)">
+          <div class="card" v-for="popolare in popolari">
+            <div class="card-content">
+              <div class="card-front">
+                <img  :src="(popolare.poster_path == null) ? errore : `http://image.tmdb.org/t/p/w200/${popolare.poster_path}`" alt="">
+              </div>
+              <div class="card-back">
+                <div class="card-info">
+                  <span class="card-title">Titolo:</span>
+                  <h3>{{popolare.title}}</h3>
+                  <img :src="flag + popolare.original_language + '/shiny/64.png'" alt="">
+                </div>
+                <div class="overview">
+                  <p>{{popolare.overview}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Film -->
         <div class="card" v-for="(film,i) in filmSearched">
           <div class="card-content">
@@ -90,9 +111,9 @@
                   <li><i v-for="vuota in 5 - (serie.vote_average)" class="far fa-star"></i></li>
                 </ul>
               </div>
-                <div class="overview">
-                  <p>{{serie.overview}}</p>
-                </div>
+              <div class="overview">
+                <p>{{serie.overview}}</p>
+              </div>
             </div>
           </div>
         </div>
