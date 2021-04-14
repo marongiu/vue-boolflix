@@ -6,12 +6,13 @@ var app = new Vue({
     serieSearched: [],
     inizio: '',
     flag: 'https://www.countryflags.io/',
-    background: 'http://image.tmdb.org/t/p/w200/',
+    background: 'http://image.tmdb.org/t/p/w342/',
     errore: './assets/img/errore.png'
   },
 
   mounted() {
   },
+
   methods: {
     ricerca: function () {
       if (this.search.length >= 1) {
@@ -39,12 +40,10 @@ var app = new Vue({
     vote: function () {
       this.filmSearched.forEach((item, i) => {
         item.vote_average = Math.ceil(item.vote_average * 5 / 10);
-            console.log(item.vote_average);
       });
 
       this.serieSearched.forEach((item, i) => {
         item.vote_average = Math.ceil(item.vote_average * 5 / 10);
-        console.log(item.vote_average);
       });
 
     },
